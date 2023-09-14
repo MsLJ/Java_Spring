@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	//jQuery의 메인(body onload를 대체) 그렇기에 당연하게도 그냥 위에 갖다쓰면
+	//interprinter체제로 가기에 아이디가 생성되기전에 먼저 실행돼서 작동이 안됌
+	//	var b1output=$("#b1");
+	//	b1output.click(function() {
+	//	alert("zzzzz");
+
+	//	})
+
+	//얘도 소스코드 길어지면 정렬하면 알아서 지워짐 *조심*
+	
+	//jQuery:JavaScript에서 이벤트 연결하던거를 간결하게 해줄 뿐
+	$(function() {
+		//id가 b1인거 클릭하면 aaa함수 불러줌
+		//id가 b1인거의
+		//click이벤트에
+		//aaa함수 연결해두기
+		$("#b1").click(function aaa() {
+			alert("김치~");
+			$("#b2").click(function bbb() {
+				alert("볶음밥~");
+
+			});
+
+		});
+
+	});
+</script>
+</head>
+<body>
+
+
+
+	<button id="b1">버튼1</button>
+	<br>
+	<button id="b2">버튼2</button>
+	<br>
+
+</body>
+</html>

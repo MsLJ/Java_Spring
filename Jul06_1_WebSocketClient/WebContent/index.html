@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+.myMsg{
+background-color: skyblue;
+color:white;
+box-shadow:3px 3px 3px blue;
+font-size: 15pt;
+font-weight: 800;
+padding: 10px;
+border-radius: 10px;
+}
+.yourMsg{
+background-color: white;
+color:skyblue;
+box-shadow:3px 3px 3px blue;
+font-size: 15pt;
+font-weight: 800;
+padding: 10px;
+border-radius: 10px;
+
+}
+
+
+</style>
+<link rel="stylesheet"
+	href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script
+	src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript"
+	src="http://195.168.9.63:1234/socket.io/socket.io.js">
+	
+</script>
+<script type="text/javascript">
+	$(function() {
+		var socket = io.connect("http://195.168.9.63:1234");
+		var n;
+
+		$("#msg").keyup(function(e) {
+			if (e.keyCode == 13) {
+				n = $("#nickname").val();
+				var m = $(this).val();
+				var msg = {
+					nn : n,
+					txt : m
+				};
+				socket.emit("clientMsg", msg);
+				$(this).val("")
+			}
+		});
+		socket.on("serverMsg", function(m) {
+			var br = $("<br>");
+			var br2 = $("<br>");
+			var who = "[" + m.nn + "]";
+			var td1 = $("<td></td>").append(who, br, br2, m.txt);
+			var td2 = $("<td></td>").attr("style", "width:20%;");
+			var td3 = $("<td></td>").attr("style", "width:40%;");
+			var tr;
+
+			if (n == m.nn) {
+				td1=$(td1).attr("class","myMsg")
+				tr = $("<tr></tr>").append(td3, td2, td1);
+
+			} else {
+				td1=$(td1).attr("class","yourMsg")
+				tr = $("<tr></tr>").append(td1, td2, td3);
+
+				//var mtd=$("<td></td>").attr("colspan","3").attr("align","left").text(m.nn+":"+m.txt);
+				//var tr=$("<tr></tr>").append(mtd);
+				//$("#your").append(tr);
+				//아마 colspan을 줘도 width값을 안줘서 적용이 제대로 돼지않았던것같다.
+				
+				
+				
+			}
+			$("table").append(tr);
+			var htmlHeight=$(document).height();
+			$(window).scrollTop(htmlHeight);
+		});
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+	<div data-role="page" id="loginPage">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>채팅</h1>
+		</div>
+		<div data-role="content">
+			<img src="doge.jpg"> <input id="nickname" placeholder="대화명">
+			<a href="#chatPage" data-role="button" data-transition="flow">login</a>
+
+		</div>
+
+
+	</div>
+	<!-- ------------------------------------------------------------------------- -->
+	<div data-role="page" id="chatPage">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<a href="#loginPage" data-transition="flow" data-icon="arrow-l">뒤로</a>
+			<h1>채팅</h1>
+		</div>
+		<div data-role="content">
+			<table>
+
+
+			</table>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<input id="msg" placeholder="내용">
+		</div>
+	</div>
+
+
+
+
+
+
+</body>
+</html>

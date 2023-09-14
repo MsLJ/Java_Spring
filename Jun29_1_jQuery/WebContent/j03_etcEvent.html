@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("select").change(function() {
+			var v = $("select").val();
+			alert(v);
+		});
+		//JS내장 객체
+		//	document:이 html
+		//	navigator:브라우저(기능쪽)
+		//	window:브라우저(디자인쪽)
+		//	navigator.userAgent
+		$(window).resize(function() {
+			//윈도우 창 늘릴때 한 번 뗄때 한 번
+			var w = $(window).width();
+			var h = $(window).height();
+			$("h1").text(w + "," + h);
+		});
+		$(window).scroll(function() {
+			//스크롤 내릴때 한 번 놓을때 한 번
+			var htmlHeightBlack = $(document).height();
+			//alert(htmlHeight);
+			var browserHeightRed = $(window).height();
+			//alert(browserHeight);
+			var browserOffsetgreen = $(window).scrollTop();
+			//alert(browserOffsetgreen);
+			if (browserHeightRed+browserOffsetgreen>=htmlHeightBlack-30) {
+				var h2=$("<h2></h2>").text("ㅎㅎ");
+				$("body").append(h2);
+				
+			}
+		});
+
+	});
+</script>
+</head>
+<body>
+	<select>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+	</select>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+	<h1>김치찜</h1>
+</body>
+</html>

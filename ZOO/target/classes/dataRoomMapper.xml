@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ms.zoo.dataroom.DataRoomMapper">
+	<insert id="upload"
+		parameterType="com.ms.zoo.dataroom.DataRoomFile">
+		insert into zoo_dataroom
+		values(zoo_dataroom_seq.nextval,#{zd_uploader},#{zd_title},#{zd_file},#{zd_category},sysdate)
+
+
+
+	</insert>
+
+	<select id="getdata"
+		resultType="com.ms.zoo.dataroom.DataRoomFile"
+		parameterType="com.ms.zoo.dataroom.DataRoomFile">
+
+		select * from zoo_dataroom order by zd_date desc
+	</select>
+	
+	<select id="getfile"
+		resultType="java.lang.String"
+		parameterType="com.ms.zoo.dataroom.DataRoomFile">
+
+		select zd_file from zoo_dataroom where zd_no=#{zd_no}
+		order by zd_date desc
+	</select>
+
+	<delete id="delete"
+		parameterType="com.ms.zoo.dataroom.DataRoomFile">
+		delete from zoo_dataroom where
+		zd_no=#{zd_no}
+
+
+
+	</delete>
+
+
+
+</mapper>

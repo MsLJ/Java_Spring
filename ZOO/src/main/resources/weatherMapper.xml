@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ms.zoo.weather.WeatherMapper">
+	<insert id="reg" parameterType="com.ms.zoo.weather.Weather">
+		insert into zoo_weather_color
+		values(#{zwc_temp},#{zwc_humidity},#{zwc_description},#{zwc_color})
+	</insert>
+
+
+
+
+</mapper>

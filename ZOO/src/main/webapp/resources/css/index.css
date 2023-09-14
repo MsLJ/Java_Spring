@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+body {
+	background-color: #FFD1D1;
+	background-position: center padding: 0px;
+	margin: 0px;
+}
+
+table {
+	border-spacing: 0px;
+	font-family: 배달의민족 주아;
+}
+
+#siteTitleArea {
+	position: fixed;
+	width: 100%;
+	top: -50px;
+	tansition: top 0.3s ease-out;
+	font-size: 15pt;
+	margin: auto;
+}
+
+#siteTitleArea table {
+	width: 300px;
+}
+
+#siteMenu {
+	height: 40px;
+	color: #ff9d9d;
+	
+}
+
+#siteMenu a {
+	color: #ff9d9d;
+}
+
+#siteTitle {
+	height: 70px;
+	
+}
+
+#siteTitle a {
+	font-family: "배달의민족 주아";
+	font-size: 25pt;
+	color: #ff9d9d;
+}
+
+#siteContentArea {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	padding: 170px;
+}
+
+#siteLoginArea {
+	background-color: transparent;
+	border:#ff9d9d 5px solid;
+	height:100px;
+	width:100px;
+	
+}
+
+#resultDiv {
+	right: 90px;
+	position: fixed;
+	top: 150px;
+	font-weight: 900;
+	font-family: 배달의민족 주아;
+	color: #ff9d9d;
+}
+
+#snsL {
+	font-size: 150pt;
+	font-weight: 900;
+	position: fixed;
+	top: 40%;
+	color: #ff9d9d;
+	font-family: 배달의민족 주아;
+	left: 40px;
+}
+
+#snsR {
+	right: 40px; font-size : 150pt;
+	font-weight: 900;
+	position: fixed;
+	top: 40%;
+	color: #ff9d9d;
+	font-family: 배달의민족 주아;
+	font-size: 150pt;
+}

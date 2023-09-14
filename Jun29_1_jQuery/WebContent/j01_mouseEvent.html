@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//jQuery에서 이벤트에 연결되는 콜백함수의 첫번째 파라메터로 이벤트객체
+		//원래 뭔가 기능이 있는 이벤트에 연결하는 콜백함수
+		//에서 return true;:원래 기능 살리기
+		//에서 return false;:원래 기능 없애기
+		//click,dblclick
+		$("div").mousedown(function(e) {
+			//alert(JSON.stringify(e));
+			$("#h11").text("mousedown:" + e.button);
+
+		});
+		$("div").mouseup(function(e) {
+			$("#h11").text("mouseup:" + e.button);
+
+		});
+		////////////////////////////////////////
+		$("div").mouseenter(function(e) {
+			$("#h11").text("mouseenter");
+
+		});
+		//div에서 1px이라도 마우스를 움직이면 작동하는
+		$("div").mousemove(function(e) {
+			//e.pageX,e.pageY:html기준 8이 기본값이라 끝까지 가도 0이아닌 8
+			$("#h11").text("mousemove");
+			$("#h11").text(e.pageX + "," + e.pageY);
+
+		});
+		$("div").mouseleave(function(e) {
+			$("#h11").text("mouseleave");
+
+		});
+		$("html").mousemove(function(e) {
+			//너무 이미지에 딱맞게 맞추면 클릭 안됌 값을 알아서 좀 조정해야할것
+			var l = e.pageX + 10;
+			var t = e.pageY + 10;
+			$("img").css("top", t);
+			$("img").css("left", l);
+		});
+		/////////////////////////////////////
+		//(우클릭해서) 브라우저 팝업메뉴 나올때 작동돼는
+		$(document).contextmenu(function() {
+			return false;
+
+		});
+		$("html").mouseup(function(e) {
+			if (e.button == 2) {
+				var l = e.pageX + 5;
+				var t = e.pageY + 5;
+				$("table").css("left", l + "px");
+				$("table").css("top", t + "px");
+				$("table").css("opacity", "1");
+				setTimeout(function() {
+					$("table").css("opacity", "0");
+
+					setTimeout(function() {
+						$("table").css("left", "-100px");
+						$("table").css("top", "-100px");
+
+					}, 300);
+				}, 3000);
+
+			}
+		});
+
+	});
+</script>
+<style type="text/css">
+div {
+	width: 300px;
+	height: 300px;
+	border: black solid 2px;
+}
+
+img {
+	position: fixed;
+}
+
+table {
+	position: fixed;
+	top: -100px;
+	left: -100px;
+	opacity: 0;
+	trasition:opacity 0.3s ease-out;
+}
+</style>
+</head>
+<body>
+	<img src="stop-32.png">
+	<table border="1">
+		<tr>
+			<td><a href="https://www.naver.com">naver</a></td>
+		</tr>
+		<tr>
+			<td><a href="https://www.google.com">gog</a></td>
+		</tr>
+		<tr>
+			<td><a href="https://www.daum.com">dam</a></td>
+		</tr>
+	</table>
+
+	<div></div>
+	<h1 id="h11">zz</h1>
+	<h1 id="h12">z</h1>
+</body>
+</html>

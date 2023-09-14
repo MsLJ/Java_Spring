@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+	<insert id="regMember" parameterType="com.ms.web2.member.Member">
+		insert into web2_member
+		values(#{webm_id},#{webm_pw},#{webm_name},#{webm_age},#{webm_adr},#{webm_birthday},#{webm_photo})
+	</insert>
+	<select id="loginMember"
+		parameterType="com.ms.web2.member.Member"
+		resultType="com.ms.web2.member.Member">
+		select*
+		from web2_member
+		where webm_id=#{webm_id}
+
+
+	</select>
+
+	<delete id="deleteMember"
+		parameterType="com.ms.web2.member.Member">
+		delete from web2_member where webm_id=#{webm_id}
+	</delete>
+	
+	<update id="update" parameterType="com.ms.web2.member.Member">
+		update from web2_member 
+		set webm_pw=#{webm_pw},webm_name=#{webm_name},webm_adr=#{webm_adr},webm_photo=#{webm_photo}
+		where webm_id=#{webm_id}
+
+	</update>
+
+
+
+</mapper> 
+ 

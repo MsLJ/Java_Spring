@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var paper = document.getElementById("cv");
+		var pen = paper.getContext("2d");
+		var startX = 0;
+		var startY = 0;
+		var endX = 0;
+		var endY = 0;
+		//var cvOffset=$("canvas").offset().left+3;
+		//var cvOffsetTop=$("canvas").offset().top+3;
+		var draw = false;
+		$("canvas").mousedown(function(e) {
+
+			draw = true;
+			startX = e.pageX - 11;
+			startY - e.pageY - 11;
+
+		});
+
+		$("canvas").mousemove(function(e) {
+			if (draw == true) {
+				endX = e.pageX - 11;
+				endY = e.pageY - 11;
+				//그냥 input하나를 만들어놓고 그냥 그값을 받아와서 색상을 바꾸면될것
+				//굳이 기존에 했던 rgb random값을 만들지않고
+				pen.strokeStyle = $("input").val();
+				pen.lineWidht = 3;
+				pen.beginPath();
+				pen.moveTo(startX, startY);
+				pen.lineTo(endX, endY);
+				pen.closePath();
+				pen.stroke();
+				startX = endX;
+				startY = endY;
+			}
+		});
+		$("canvas").mouseup(function(e) {
+			draw = false;
+
+		});
+
+	});
+</script>
+
+<style type="text/css">
+canvas {
+	border: black solid 3px;
+}
+</style>
+</head>
+<body>
+	<canvas id="cv" width="900px" height="800px">
+	</canvas>
+	<input>
+</body>
+</html>

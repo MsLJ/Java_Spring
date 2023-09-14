@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+#snsControlArea1 {
+	position: fixed;
+	height:0px;
+	left: 300px;
+	bottom: -265px;
+	width: 100%;
+	transition:all 0.5s ease-out;
+}
+#snsControlArea2 {
+	position: fixed;
+	left: 300px;
+	bottom: 0px;
+	width: 100%;
+}
+#snsControlArea3 {
+	position: fixed;
+	left: 300px;
+	bottom: 0px;
+	width: 100%;
+	transition:all 0.5s ease-out;
+}
+#snsWriteArea {
+	border: white solid 3px;
+	width: 500px;
+	font-family: "배달의민족 주아";
+	font-size: 13pt;
+	color: #ff9d9d;
+	
+}
+
+.snsViewArea .replyTd input {
+	border: none;
+	font-family: "배달의민족 주아";
+	background-color: transparent;
+	color: #ff9d9d;
+}
+.snsViewArea .replyTd button{
+	border: none;
+	font-family: "배달의민족 주아";
+	font-size:13pt;
+	background-color: transparent;
+	color: #ff9d9d;
+}
+
+
+#snsWriteArea input {
+	border: none;
+	background-color: transparent;
+	color: #ff9d9d;
+}
+
+.snsViewArea .writerImg {
+	max-width: 200px;
+}
+
+.snsViewArea .replyTd {
+	padding: 20px;
+}
+
+.snsViewArea {
+	width: 1000px;
+	margin: 20px;
+	border-radius: 10px;
+	border: #ff9d9d 5px solid;
+}
+
+.snsViewArea .txtTd {
+	padding: 20px;
+	font-size: 11pt;
+}
+
+.snsViewArea .dateTd {
+	padding-right: 10px;
+	height: 25px;
+}
+
+.snsViewArea .writerTd {
+	font-size: 17pt;
+	height: 40px;
+	padding-left: 10px;
+}
+
+textarea {
+	width: 390px;
+	height: 100px;
+	resize: none;
+	font-family: "배달의민족 주아";
+}
+
+#snsWriteArea textarea {
+	color: #ff9d9d;
+	padding: 7px;
+	border: none;
+	background-color: transparent;
+}
+
+#snsWriteArea textType {
+	border: none;
+	background-color: transparent;
+	width: 400px;
+	height: 35px;
+	font-family: "배달의민족 주아";
+}
+
+#snsSearchArea input {
+	border: white 5px solid;
+	background-color: transparent;
+	width: 400px;
+	height: 60px;
+	font-family: "배달의민족 주아";
+	color: white;
+}
+
+#snsControlArea1 button {
+	border: none;
+	background-color: transparent;
+	font-family: "배달의민족 주아";
+	color: white;
+	max-height: 40px;
+}
+#snsControlArea3 button {
+	border: none;
+	background-color: transparent;
+	font-family: "배달의민족 주아";
+	color: white;
+	max-height: 40px;
+}
+
+
+
+#blackArea{
+	position: fixed;
+	width:100%;
+	height:100%;
+	left:-100%;
+	top: -100%;
+	background-color: #000000AA;
+	opacity:0;
+	transition:opacity 0.3s ease-out;
+	}
+
+#blackArea textarea{
+	background-color: transparent;
+	font-size:15pt;
+}
+
+#blackArea button{
+	border:none;
+	font-size:14pt;
+	background-color: transparent;
+	color:#ff9d9d;
+	
+}
+#x{
+	cursor: pointer;
+}
+

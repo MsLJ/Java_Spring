@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.ms.jun161sdi.company.Company" id="c">
+		<constructor-arg value="오리온"></constructor-arg>
+		<constructor-arg value="100"></constructor-arg>
+		<constructor-arg value="수원"></constructor-arg>
+	</bean>
+	<bean class="com.ms.jun161sdi.company.Snack" id="s1">
+		<property name="name" value="수수깡"></property>
+		<property name="price" value="10000"></property>
+		<property name="maker" ref="c"></property>
+		<property name="ingredients">
+			<list value-type="java.lang.String">
+				<value>감자</value>
+				<value>고구마</value>
+				<value>새우</value>
+				<value>코코넛</value>
+			</list>
+		</property>
+		<property name="style">
+			<list value-type="java.lang.String">
+				<value>레어</value>
+				<value>20시간 건조</value>
+				<value>세탁x</value>
+			</list>
+		</property>
+		<property name="nutrient">
+			<map key-type="java.lang.String" value-type="java.lang.Double">
+				<entry key="탄수화물" value="0.6"></entry>
+				<entry key="단백질" value="0.8"></entry>
+				<entry key="당분" value="0.4"></entry>
+				<entry key="염분" value="0.3"></entry>
+
+			</map>
+		</property>
+
+	</bean>
+</beans>

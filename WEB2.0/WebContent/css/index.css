@@ -1,0 +1,69 @@
+@charset "EUC-KR";
+body{
+	background-color: #bfe3f2;
+}
+table {
+	border-spacing: 0px;
+	font-family: 배달의민족 주아;
+	
+}
+
+#siteTitleArea{
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#bfe3f2 ;
+	width:1200px;
+	height:150px;
+	font-size: 30pt;
+	border: #43b5cd solid 2px;
+	
+	
+}
+#siteTitleArea a{
+	color: #1aa7bb;
+}
+
+#siteLoginArea{
+	border-top: #1aa7bb solid 2px;
+	border-bottom: #1aa7bb solid 2px;
+	margin-right:auto;
+	z-index:99;
+	height:30px;
+	width:300px;
+	
+}
+#siteMenuArea{
+	
+	border-bottom: black solid 2px;
+	margin-left:auto;
+	margin-right:auto;
+	width:1200px;
+	height:60px;
+	font-size:17pt;
+	
+	
+}
+#siteMenuArea a{
+	color:#8080ff;
+}
+
+
+#siteContentArea{
+	border:#8ac8be solid 2px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	padding: 170px;
+	
+}
+.img{
+	width:100%;
+}
+#resultDiv{
+	left:90px;
+	position:fixed;
+	top:200px;
+	font-weight: 900;
+	font-family: 배달의민족 주아;
+	color: #30a723;
+}

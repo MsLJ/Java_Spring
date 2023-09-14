@@ -1,0 +1,26 @@
+@charset "EUC-KR";
+#photozoneTb{
+	font-family:배달의민족 주아;
+	width:100%;
+	margin:10px;
+	border:  #ff8080 solid 2px;
+	left:0px;
+}
+#photoWriteTb table{
+	font-family:배달의민족 주아;
+	border:  #ff8080 solid 2px;
+	
+}
+#photoWriteTb button{
+	font-family:배달의민족 주아;
+	color: green;
+}
+#photoWriteTb insert{
+	font-family:배달의민족 주아;
+}
+
+
+#photozoneTb img{
+	padding:10px;
+	max-width: 150px;
+}

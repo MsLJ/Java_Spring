@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ms.jun261xmljson.menu.MenuMapper">
+
+	<select id="get" resultType="com.ms.jun261xmljson.menu.Menu"
+		parameterType="com.ms.jun261xmljson.menu.MenuPage">
+		SELECT * FROM (
+		SELECT ROWNUM AS rn, m_name, m_price FROM (
+		SELECT m_name, m_price FROM jun27_menu
+		
+		)
+		)
+		WHERE rn &gt;= #{start} and rn &lt;=#{end}
+
+	</select>
+	<select id="getpage" resultType="java.lang.Integer">
+		select count(*)from jun27_menu
+
+	</select>
+
+
+</mapper>

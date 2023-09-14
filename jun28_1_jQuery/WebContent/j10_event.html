@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.aa {
+	background-color: red;
+	font-size: 15pt;
+}
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+
+function addBtn() {
+	var b=$("<button></button>").attr("onclick","addBtn();").text("qwer");
+	$("body").append(b);
+	
+}
+	//$(function() {
+//body에있는거 화면 다 뜨고 나서 onload
+//지금 있는 모든 button들의 click이벤트에 aaa함수 연결해두기
+		//$("button").click(function () {
+		//var b=$("<button></button>").text("qwer");
+		//$("body").append(b);
+		//});
+
+//jQuery의 이벤트 연결하는 방식으로는
+//=>jQuery로 추가되는 객체들의 이벤트 처리는 불가능
+
+	//});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="addBtn();">button</button>
+</body>
+</html>

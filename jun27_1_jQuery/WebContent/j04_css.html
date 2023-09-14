@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+div {
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	font-size: 25pt;
+	color: white;
+	transition: background-color 10s ease-in;
+	/*
+	ease-in:빨라짐
+	ease-out:느려짐
+	linear:등속
+	*/
+}
+
+img {
+	position: fixed;
+	top:1000px;
+	left:0px;
+	transition:all 0.5s ease-out;
+}
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var tt;
+		//jQuery문법 특징:
+		//	객체 한번 선택해서, 여러번 작업 가능
+		//	getter/setter따로 없고,파라메터 갯수로
+		$("#b1").click(
+				function() {
+					//$(선택자).css("속성명","값");
+					$("div").css("width", "100px").css("font-size", "300pt")
+							.css("font-family", "배달의민족 주아");
+					$("div").css("color", "black").css("background-color",
+							"white");
+
+				});
+		$("#b2").click(function() {
+			//set get 구분없기에 그냥 background-color 만 쓰면 get
+			var bg = $("div").css("background-color");
+			alert(bg);
+		});
+
+		$("#b3").click(function() {
+			$("div").css("background-color", $("#ii").val());
+			$("#ii").val("");
+
+		});
+		$("#b4").click(function() {
+			//setTimeout(함수,시간(ms));
+			//시간만큼 지나고 함수 자동호출
+			setTimeout(function(){
+			$("img").css("top", "100px");
+			$("img").css("left", "100px");
+				
+				
+			},1000);
+			setTimeout(function(){
+			$("img").css("left", "1500px");
+				
+				
+			},2000);
+			setTimeout(function(){
+			$("img").css("top", "1000px");
+				
+				
+			},2500);
+			$("img").css("max-width", "250pt");
+			$("img").css("max-height", "100pt");
+		});
+		$("#b5").click(function() {
+				//math.random():0.0~0.999999999999
+			
+			//setInterval(함수,시간(ms));
+				//시간마다 함수 자동호출
+				tt= setInterval(function() {
+					var t=Math.random()*1080;
+					var l=Math.random()*1920;
+					$("img").css("top",t+"px").css("left",l+"px");
+				},500)
+		});
+		$("#b6").click(function() {
+			clearInterval(tt);
+			$("img").css("top","-1000px");
+		});
+
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<div>zzzz</div>
+<body>
+	<button id="b1">b1</button>
+	<button id="b2">b2</button>
+	<hr>
+	<input id="ii">
+	<button id="b3">b3</button>
+	<hr>
+	<button id="b4">b4</button>
+	<img src="sm.png">
+	<button id="b5">b5</button>
+	<button id="b6">b6</button>
+
+
+</body>
+</html>

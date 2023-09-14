@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var paper = document.getElementById("cv");
+		var pen = paper.getContext("2d");
+		var ball = new Image();
+		var bar = new Image();
+		bar.src = "bar.png";
+		ball.src = "ball.png";
+		var x = 450;
+		var y = 0;
+		var ySpd = 10;
+		var xSpd = 10;
+		var barX = 150;
+		var barY = 770;
+		ball.onload = function() {
+			var t=	setInterval(function() {
+				pen.save();
+				pen.fillStyle = "rgba(0,0,0,0.1)";
+				pen.fillRect(0, 0, 900, 800);
+				x += xSpd;//6px;
+				y += ySpd;
+				if (x >= 870 || x <= 0) {
+					xSpd *= -1;
+
+				}
+				if (y <= 0) {
+					ySpd *= -1;
+
+				}
+				if (y >= 735 && x >= barX - 15 && x <= barX + 85) {
+					ySpd *= -1;
+
+				}
+				if (y>=770) {
+					alert("게임오버");
+					//스피드를 0으로 해도돼지만 뒤에서는 계속해서 반복문으로
+					//돌고있을것 그냥 반복문을 멈추자.
+					clearInterval(t);
+					
+				}
+				//if문에서 &&는 and식인데 아래 형식처럼 했을때 조건을 받는형식이 확률이 높은
+				//x좌표들을 먼저 배치했을때 중간에 있을때 3번의 조건식을 쓰게돼어 cpu사용량이
+				//많아질것이다(컴퓨터가 0.2초마다 계산하기에)
+				//그렇기에 확률이 낮은걸 맨앞에 배치해야 성능적으로 좋아질것이다.
+				//if  (x >= barX - 15 && x <= barX + 85&&y >= 735 ) {
+				//ySpd *= -1;
+				//}
+
+				pen.shadowBlur = 20;
+				pen.shadowColor = "white";
+				pen.fillStyle = "#A1887F";
+				pen.fillRect(barX, barY, 100, 20);
+				//바의 중심이 마우스 따라다니게
+
+				pen.drawImage(ball, x, y);
+				pen.restore();
+
+			}, 30);
+		};
+		$("canvas").mousemove(function(e) {
+			barX = e.pageX - 58;
+		});
+	});
+</script>
+
+<style type="text/css">
+canvas {
+	border: black solid 3px;
+}
+</style>
+</head>
+<body>
+	<canvas id="cv" width="900px" height="800px">
+	</canvas>
+</body>
+</html>

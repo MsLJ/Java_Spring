@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ms.zoo.member.MemberMapper">
+	<select id="getMemberByID"
+		parameterType="com.ms.zoo.member.ZooMember"
+		resultType="com.ms.zoo.member.ZooMember">
+		select * from zoo_member where zm_id=#{zm_id}
+	</select>
+	<insert id="join" parameterType="com.ms.zoo.member.ZooMember">
+		insert into zoo_member
+		values(#{zm_id},#{zm_pw},#{zm_name},#{zm_birthday},#{zm_addr},#{zm_photo})
+	</insert>
+	<delete id="deleteMember"
+		parameterType="com.ms.zoo.member.ZooMember">
+		delete from zoo_member where zm_id=#{zm_id}
+	</delete>
+	<update id="updateMember"
+		parameterType="com.ms.zoo.member.ZooMember">
+		update zoo_member set
+		zm_pw=#{zm_pw},zm_name=#{zm_name},zm_addr=#{zm_addr},zm_photo=#{zm_photo}
+		where zm_id=#{zm_id}
+	</update>
+	<select id="get2" resultType="com.ms.zoo.member.ZooMember" parameterType="com.ms.zoo.member.ZooMember">
+	select zm_id from zoo_member where zm_id=#{zm_id}
+	
+	</select>
+</mapper>

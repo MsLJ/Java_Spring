@@ -1,0 +1,119 @@
+@charset "EUC-KR";
+#snsWriteTb{
+	font-family:배달의민족 주아;
+	width:100%;
+	left:0px;
+}
+#snsWriteTb table{
+	font-family:배달의민족 주아;
+	border:  #ff8080 solid 2px;
+	
+}
+
+#snsWriteTb textarea{
+	font-family:배달의민족 주아;
+	resize:none;
+	width:700px;
+	
+	border:  #ff8080 solid 2px;
+	height:150px;
+	font-size: 10pt;
+	
+	
+	
+}
+#snsWriteTb button{
+	font-family:배달의민족 주아;
+	color: green;
+	
+}
+.smgTb{
+width:1000px;
+margin:20px;
+border-radius: 10px;
+border:  #ff8080 solid 2px;
+	
+}
+
+.snsReplyWriter{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+
+.smgTb td{
+	padding: 10px;
+	
+}
+.smgTb.td1{
+	width:80px;
+}
+.smgTb img{
+	max-width: 200px;
+}
+.smgTb.td2{
+font-family:배달의민족 주아;
+font-size:13pt;
+
+	}
+.smgTb.td3{
+	font-family:배달의민족 주아;
+	font-size:10pt;
+	
+}
+.smgTb.td4{
+	font-family:배달의민족 주아;
+	padding: 20px;
+}
+
+.smgTb button{
+		font-family:배달의민족 주아;
+		
+		color: green;
+		font-size: 14pt;
+	
+}
+
+.snsL, .snsR{
+	font-size: 150pt;
+	font-weight:900;
+	position: fixed;
+	top: 40%;
+	color:green;
+	font-family:배달의민족 주아;
+	
+	
+}
+.snsL{
+	left:40px;
+}
+.snsR{
+	right:40px;
+}
+#snsSearchArea{
+	margin-left:600px;
+	width:400px;
+	height:10px;
+	border: #ff8080 3px solid;
+	background-color: white;
+	
+}
+#snsSearchArea input{
+	width:400px;
+	height: 8x;
+	border:none;
+	
+	outline: none;
+	font-family: 배달의민족 주아;
+	padding: 5px;
+	
+}
+
+#snsSearchArea button{
+	font-family:배달의민족 주아;
+		
+		color: green;
+		font-size: 14pt;
+	
+}

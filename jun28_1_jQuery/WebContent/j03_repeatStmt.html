@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var css = [ {
+			color : "red",
+			bgColor : "yellow"
+		}, {
+			color : "white",
+			bgColor : "blue"
+		}, {
+			color : "black",
+			bgColor : "brown"
+		}
+
+		];
+			$("div").each(css, function(i, cc) {
+				$(cc).css("color", css[i].color);
+				$(cc).css("background-color", css[i].bgColor);
+
+			});
+
+
+	});
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div>ㅋㅋㅋ</div>
+	<div>ㅎㅎㅎ</div>
+	<div>ㅇㅇㅇ</div>
+</body>
+</html>

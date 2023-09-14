@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//함수 만들어놓고 ->DOM객체의 onXXX에 연결하는 작업형태
+	//->html소스 길어지면 DOM객체 찾기가...
+	//->같은 이벤트 여러 객체가 걸어줄때...
+
+	//실행순서상 위에서 부터 아래로 가는데 12번줄이 먼저 실행하고 그다음 아래줄 실행이기에 받아올 id가 없음
+	var i = null;
+	function mainHa() {
+		i = document.getElementById("ii");
+
+	}
+
+	//interpreter방식 언어 주제에 문법이 길어->에러 많이 나..
+	//interpreter방식 언어 main이 없고->필요하면 만들어 쓰는..
+	function showme() {
+		alert(i.value);
+
+	}
+</script>
+</head>
+<!-- body의 onload:body에 있는거 화면에 다 나오고 나서 -->
+<body onload="mainHa();">
+	<input id="ii">
+	<button onclick="showme();">버튼</button>
+
+</body>
+
+</html>

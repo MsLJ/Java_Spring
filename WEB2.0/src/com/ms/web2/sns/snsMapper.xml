@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="snsMapper">
+	<insert id="writeSNS" parameterType="com.ms.web2.sns.SNSMsg">
+		insert into sns
+		values(sns_seq.nextval, #{sns_writer}, #{sns_txt},sysdate)
+
+	</insert>
+	<select id="getSNS" resultType="com.ms.web2.sns.SNSMsg"
+		parameterType="com.ms.web2.sns.SNSPage">
+		select sns_no, webm_id, webm_photo, sns_txt, sns_date
+
+		from(
+
+		select *
+
+		from (
+
+		select rownum as rn,
+		sns_no,sns_txt,sns_date,sns_writer
+
+		from(
+
+		select *
+
+		from sns
+
+		where sns_txt
+		like '%'||#{search}||'%'
+
+		order by sns_date desc
+
+		)
+
+
+
+		)where rn &gt;=
+		#{start} and rn &lt;= #{end}
+
+		),
+
+		(
+
+		select webm_id, webm_photo
+
+		from
+		web2_member
+
+		where webm_id in(
+
+		select sns_writer
+
+		from (
+
+		select rownum as
+		rn, sns_no,sns_txt,sns_date, sns_writer
+
+		from(
+
+		select *
+
+		from sns
+
+		where
+		sns_txt like '%'||#{search}||'%'
+
+		order by sns_date desc
+
+		)
+
+		)
+
+		where rn &gt;=
+		#{start} and rn &lt;= #{end}
+
+		) )
+
+		where sns_writer = webm_id
+
+		order by
+		sns_date desc
+
+
+
+	</select>
+	<select id="getAllMsgCount" resultType="java.lang.Integer"
+		parameterType="com.ms.web2.sns.SNSPage">
+		select count(*) from sns where sns_txt like
+		'%'||#{search}||'%'
+
+	</select>
+	
+	<insert id="insertsnsReply" parameterType="com.ms.web2.sns.SNSReply">
+	insert into sns_re values(sns_re_seq.nextval,#{sre_sns_no},#{sre_writer},#{sre_txt},sysdate);
+	
+	</insert>
+
+
+
+
+
+
+
+
+</mapper>

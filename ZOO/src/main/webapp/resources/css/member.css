@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+#loginTbl {
+	background-color: transparent;
+	
+}
+
+#loginTbl a {
+	font-family: 배달의민족 주아;
+	color: #ff9d9d;
+}
+
+#loginTbl input {
+	background-color: #FFD1D1;
+}
+
+#loginTbl button {
+	background-color: transparent;
+	border: none;
+	color: #ff9d9d;
+}
+
+#joinTbl {
+	width: 70%;
+	text-align: center;
+}
+
+#joinTbl input {
+	background-color: #FFD1D1;
+	font-family: 배달의민족 주아;
+	height: 30px;
+	padding: 10px;
+	width: 800px;
+	height: 30px;
+}
+
+#joinTbl td {
+	padding: 10px;
+}
+#loginedTb{
+	height:250px;
+	width:250px;
+}
+
+#loginedTb td {
+	font-family: 배달의민족 주아;
+	font-size: 15pt;
+}
+
+#loginedTb button {
+	font-family: 배달의민족 주아;
+	font-size: 15pt;
+	background-color: transparent;
+	border: none;
+	
+}
+
+#loginedTb img {
+	max-width: 150px;
+}

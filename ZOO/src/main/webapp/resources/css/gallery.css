@@ -1,0 +1,20 @@
+@charset "UTF-8";
+#galleyArea{
+	width:95%;
+	height: 800px;
+	font-family: "배달의민족 주아";
+	
+}
+#galleyArea .grImg{
+	float: left;
+	width: 170px;
+	margin: 25px;
+	box-shadow: 2px 2px 2px black;
+}
+#galleyArea .grImg td{
+	padding: 10px;
+}
+#galleyArea .grImg img{
+	max-width: 150px;
+	box-shadow: 2px 2px 2px black;
+}
